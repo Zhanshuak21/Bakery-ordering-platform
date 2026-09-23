@@ -1,13 +1,18 @@
-/* ================================
+/* =========================================
    SWEET CRUMB BAKERY
-   Assignment 1 - HTML & CSS Basics
+   Assignment 2 - Flexbox & CSS Grid
+   ========================================= */
+
+/* ================================
+   BASIC STYLES
    ================================ */
-
-
-/* ELEMENT SELECTORS */
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,10 +31,12 @@ h3 {
 
 h1 {
     font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2rem;
+    margin-bottom: 25px;
 }
 
 p {
@@ -46,54 +53,59 @@ a:hover {
 }
 
 
-/* ID SELECTOR */
+/* ================================
+   HEADER - FLEXBOX
+   Assignment 2 Task 1
+   ================================ */
 
 #main-header {
     background-color: #6f3d28;
     padding: 18px 5%;
 }
 
-#contact-form,
-#order-form {
-    background-color: #fff3e8;
-    border: 2px solid #e2b995;
-    border-radius: 15px;
-    padding: 25px;
-}
-
-
-/* NAVIGATION */
-
 .nav-container {
     max-width: 1200px;
     margin: auto;
+
+    /* FLEXBOX */
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 30px;
 }
 
 .logo {
     color: white;
     font-size: 1.6rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .nav-menu {
     list-style: none;
     padding: 0;
     margin: 0;
+
+    /* FLEXBOX */
     display: flex;
+
+    /* spacing between links */
     gap: 22px;
+
+    align-items: center;
 }
 
-
-/* DESCENDANT SELECTOR */
+.nav-menu li {
+    display: flex;
+}
 
 .nav-menu a {
     color: white;
     font-weight: bold;
     padding: 8px 10px;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 .nav-menu a:hover {
@@ -107,7 +119,9 @@ a:hover {
 }
 
 
-/* LAYOUT */
+/* ================================
+   GENERAL LAYOUT
+   ================================ */
 
 .container {
     width: 90%;
@@ -124,18 +138,25 @@ a:hover {
 }
 
 
-/* HERO */
+/* ================================
+   HERO - FLEXBOX
+   ================================ */
 
 .hero {
     min-height: 70vh;
+
+    /* FLEXBOX */
     display: flex;
+
     align-items: center;
+    justify-content: space-between;
+
     gap: 40px;
 }
 
 .hero-text,
 .hero-image {
-    width: 50%;
+    flex: 1;
 }
 
 .hero-image img {
@@ -150,14 +171,18 @@ a:hover {
 }
 
 
-/* CARDS */
+/* ================================
+   CARDS - FLEXBOX
+   Assignment 2 Task 2
+   ================================ */
 
 .card-grid,
-.menu-grid,
-.gallery-grid {
+.menu-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+
+    align-items: stretch;
 }
 
 .card {
@@ -165,13 +190,39 @@ a:hover {
     border: 1px solid #ead7c7;
     border-radius: 15px;
     padding: 25px;
-    flex: 1;
-    min-width: 250px;
+
+    /* Makes cards share available space */
+    flex: 1 1 250px;
+
+    /* Equal-height behavior */
+    display: flex;
+    flex-direction: column;
+
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+.card .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .card img {
@@ -179,64 +230,235 @@ a:hover {
     height: 220px;
     object-fit: cover;
     border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 
-/* BUTTON */
+/* ================================
+   BUTTON
+   ================================ */
 
 .btn {
     display: inline-block;
+
     background-color: #9b5d3e;
     color: white;
+
     border: none;
     border-radius: 8px;
+
     padding: 12px 22px;
+
     cursor: pointer;
+
     font-size: 1rem;
+
+    transition: 0.3s;
 }
 
 .btn:hover {
     background-color: #d0784c;
     color: white;
+
+    transform: translateY(-2px);
 }
 
 
-/* IMAGES */
+/* ================================
+   GRID PAGE LAYOUT
+   Assignment 2 Task 3
+   ================================ */
+
+.page-layout {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+    min-height: 100vh;
+}
+
+.grid-header {
+    grid-area: header;
+}
+
+.grid-sidebar {
+    grid-area: sidebar;
+
+    background-color: #f8e7d8;
+    padding: 30px;
+}
+
+.grid-main {
+    grid-area: main;
+
+    padding: 40px;
+}
+
+.grid-footer {
+    grid-area: footer;
+}
+
+
+/* Sidebar */
+
+.grid-sidebar h2 {
+    font-size: 1.4rem;
+}
+
+.grid-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grid-sidebar li {
+    margin-bottom: 12px;
+}
+
+.grid-sidebar a {
+    font-weight: bold;
+}
+
+
+/* ================================
+   IMAGE GALLERY - CSS GRID
+   Assignment 2 Task 4
+   ================================ */
+
+.gallery-grid {
+    display: grid;
+
+    /* 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* equal spacing */
+    gap: 25px;
+}
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background-color: white;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Caption overlay */
+
+.gallery-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 18px;
+
+    background-color: rgba(63, 41, 31, 0.85);
+
+    color: white;
+
+    transform: translateY(100%);
+
+    transition: transform 0.3s ease;
+}
+
+.gallery-caption h3 {
+    color: white;
+    margin: 0 0 5px;
+}
+
+.gallery-caption p {
+    margin: 0;
+}
+
+
+/* Hover effect */
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   IMAGES
+   ================================ */
 
 .feature-image {
     width: 100%;
     max-height: 480px;
+
     object-fit: cover;
+
     border-radius: 20px;
 }
 
 .round-image {
     width: 180px;
     height: 180px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     border: 5px solid #e2b995;
 }
 
 
-/* TABLE */
+/* ================================
+   TABLE
+   ================================ */
 
 table {
     width: 100%;
+
     border-collapse: collapse;
+
     background-color: white;
+
     margin-top: 25px;
 }
 
 table th {
     background-color: #6f3d28;
+
     color: white;
+
     padding: 15px;
 }
 
 table td {
     border: 1px solid #ddc7b5;
+
     padding: 15px;
+
     text-align: center;
 }
 
@@ -245,10 +467,24 @@ table tr:nth-child(even) {
 }
 
 
-/* FORMS */
+/* ================================
+   FORMS
+   ================================ */
+
+#contact-form,
+#order-form {
+    background-color: #fff3e8;
+
+    border: 2px solid #e2b995;
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
 
 form {
     max-width: 700px;
+
     margin: 20px auto;
 }
 
@@ -258,7 +494,9 @@ form {
 
 form label {
     display: block;
+
     font-weight: bold;
+
     margin-bottom: 7px;
 }
 
@@ -266,10 +504,15 @@ form input,
 form select,
 form textarea {
     width: 100%;
+
     padding: 12px;
+
     border: 1px solid #cda98c;
+
     border-radius: 7px;
+
     font-family: inherit;
+
     font-size: 1rem;
 }
 
@@ -277,6 +520,7 @@ form input:focus,
 form select:focus,
 form textarea:focus {
     outline: 2px solid #d78d5d;
+
     background-color: #fffdf9;
 }
 
@@ -285,33 +529,49 @@ form textarea {
 }
 
 
-/* TEAM SECTION */
+/* ================================
+   TEAM SECTION
+   ================================ */
 
 .team-box {
-    margin-top: 40px;
+    margin-top: 10px;
+
     background-color: #f8e7d8;
+
     padding: 30px;
-    border-left: 6px solid #9b5d3e;
+
+    border-left: 6px solid white;
+
     border-radius: 10px;
 }
 
 
-/* LISTS */
+/* ================================
+   LISTS
+   ================================ */
 
 .list-box {
     background-color: #fff3e8;
+
     padding: 25px 40px;
+
     border-radius: 12px;
+
     margin: 25px 0;
 }
 
 
-/* FOOTER */
+/* ================================
+   FOOTER
+   ================================ */
 
 footer {
     background-color: #3f291f;
+
     color: white;
+
     padding: 35px 5%;
+
     text-align: center;
 }
 
@@ -320,12 +580,13 @@ footer p {
 }
 
 
-/* RESPONSIVE DESIGN */
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .nav-container,
-    .hero {
+    .nav-container {
         flex-direction: column;
     }
 
@@ -334,12 +595,269 @@ footer p {
         justify-content: center;
     }
 
+    .hero {
+        flex-direction: column;
+    }
+
     .hero-text,
     .hero-image {
         width: 100%;
     }
 
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-layout {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+}
+
+
+@media (max-width: 600px) {
+
     h1 {
         font-size: 2.2rem;
     }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-menu {
+        gap: 8px;
+    }
+
+    .nav-menu a {
+        padding: 6px 7px;
+        font-size: 0.9rem;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+
+    .grid-main {
+        padding: 25px;
+    }
 }
+
+/* =========================================
+   ORDER PAGE - ASSIGNMENT 2
+   CSS GRID LAYOUT
+   Created by URINBAY NURGUL
+   ========================================= */
+
+.order-page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+
+/* GRID AREAS */
+
+.order-header {
+    grid-area: header;
+}
+
+.order-sidebar {
+    grid-area: sidebar;
+}
+
+.order-main {
+    grid-area: main;
+}
+
+.order-footer {
+    grid-area: footer;
+}
+
+
+/* SIDEBAR */
+
+.order-sidebar {
+    background-color: #f8e7d8;
+    padding: 30px 20px;
+    border-right: 1px solid #e2b995;
+}
+
+.order-sidebar h2 {
+    margin-top: 0;
+    color: #6f3d28;
+}
+
+.order-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-sidebar-nav a {
+    color: #6f3d28;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.order-sidebar-nav a:hover {
+    background-color: #e2b995;
+}
+
+.order-sidebar-box {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fffaf4;
+    border-radius: 10px;
+}
+
+
+/* MAIN CONTENT */
+
+.order-main {
+    padding: 50px;
+    background-color: #fffaf4;
+}
+
+.order-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.order-feature-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px 0 20px;
+}
+
+
+/* ORDER FORM */
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.order-form-group {
+    margin-bottom: 15px;
+}
+
+
+/* ORDER INFORMATION */
+
+.order-info {
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+.order-info-items {
+    display: flex;
+    gap: 20px;
+}
+
+.order-info-item {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ead7c7;
+    border-radius: 12px;
+}
+
+.order-info-item:hover {
+    transform: translateY(-4px);
+}
+
+
+/* RESPONSIVE ORDER PAGE */
+
+@media (max-width: 800px) {
+
+    .order-page {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto auto 1fr auto;
+
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .order-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e2b995;
+    }
+
+    .order-main {
+        padding: 30px 20px;
+    }
+
+    .order-info-items {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   ASSIGNMENT 2
+   CONTACT PAGE - FLEXBOX CARDS
+   ========================================= */
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.contact-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+    /* CONTACT PAGE */
+
+    .contact-cards {
+        flex-direction: column;
+    }
+

@@ -13,110 +13,284 @@
 
 <body>
 
-<header id="main-header">
+<div class="page-layout">
 
-    <nav class="nav-container">
+    <!-- =========================
+         GRID AREA: HEADER
+         ========================= -->
 
-        <a class="logo" href="index.html">
-            Sweet Crumb Bakery
-        </a>
+    <header id="main-header" class="grid-header">
 
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a class="active" href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="contact.html">Contact</a></li>
+        <nav class="nav-container">
+
+            <a class="logo" href="index.html">
+                Sweet Crumb Bakery
+            </a>
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="menu.html">
+                        Menu
+                    </a>
+                </li>
+
+                <li>
+                    <a class="active" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="order.html">
+                        Order
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         GRID AREA: SIDEBAR
+         ========================= -->
+
+    <aside class="grid-sidebar">
+
+        <h2>About Our Bakery</h2>
+
+        <ul>
+
+            <li>
+                <a href="#about">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="#values">
+                    Our Values
+                </a>
+            </li>
+
+            <li>
+                <a href="#process">
+                    Our Process
+                </a>
+            </li>
+
+            <li>
+                <a href="gallery.html">
+                    View Gallery
+                </a>
+            </li>
+
+            <li>
+                <a href="menu.html">
+                    View Menu
+                </a>
+            </li>
+
         </ul>
 
-    </nav>
-
-</header>
+    </aside>
 
 
-<main>
+    <!-- =========================
+         GRID AREA: MAIN
+         ========================= -->
 
-<section class="section">
+    <main class="grid-main">
 
-    <div class="container">
+        <section id="about" class="section">
 
-        <h1>About Sweet Crumb Bakery</h1>
+            <h1>
+                About Sweet Crumb Bakery
+            </h1>
 
-        <img
-            src="images/about.jpg"
-            alt="Baker preparing fresh bakery products"
-            class="feature-image"
-        >
+            <img
+                src="images/about.jpg"
+                alt="Baker preparing fresh bakery products"
+                class="feature-image"
+            >
+
+            <p>
+                Sweet Crumb Bakery is a fictional local bakery
+                created for our Front-End Development project.
+            </p>
+
+            <p>
+                Our concept focuses on fresh products, warm design
+                and a welcoming atmosphere for customers.
+            </p>
+
+        </section>
+
+
+        <section id="values" class="section">
+
+            <h2>
+                Our Values
+            </h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+
+                    <h3>
+                        Quality
+                    </h3>
+
+                    <p>
+                        We focus on quality ingredients
+                        and carefully prepared bakery products.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        Freshness
+                    </h3>
+
+                    <p>
+                        Our products are prepared fresh
+                        to provide customers with a pleasant experience.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        Creativity
+                    </h3>
+
+                    <p>
+                        We create different bakery products
+                        and seasonal desserts.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="process" class="section">
+
+            <h2>
+                How Our Products Are Made
+            </h2>
+
+            <ol class="list-box">
+
+                <li>
+                    We select the ingredients.
+                </li>
+
+                <li>
+                    We prepare the dough.
+                </li>
+
+                <li>
+                    The dough is rested and shaped.
+                </li>
+
+                <li>
+                    The products are baked.
+                </li>
+
+                <li>
+                    They are decorated and prepared for customers.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="team-box">
+
+                <h2>
+                    About the Team Member
+                </h2>
+
+                <img
+                    src="images/gallery.jpg"
+                    alt="Feature image representing team member work"
+                    class="round-image"
+                >
+
+                <h3>
+                    NURLANKYZY ZHANSHUAK
+                </h3>
+
+                <p>
+                    I created the About and Gallery pages.
+                    I was responsible for structured text, lists,
+                    gallery cards, images and visual presentation.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         GRID AREA: FOOTER
+         ========================= -->
+
+    <footer class="grid-footer">
 
         <p>
-            Sweet Crumb Bakery is a fictional local bakery created
-            for our Front-End Development project.
+            <strong>
+                Sweet Crumb Bakery Team
+            </strong>
         </p>
 
         <p>
-            Our concept focuses on fresh products, warm design
-            and a welcoming atmosphere for customers.
+            NURLANKYZY ZHANSHUAK |
+            SRAZHDIN YASMIN |
+            URINBAY NURGUL
         </p>
 
-    </div>
+        <p>
+            Front-End Development Assignment 2
+        </p>
 
-</section>
+    </footer>
 
-
-<section class="section">
-
-    <div class="container">
-
-        <h2>Our Values</h2>
-
-        <ul class="list-box">
-            <li>Quality ingredients</li>
-            <li>Fresh daily baking</li>
-            <li>Friendly service</li>
-            <li>Creative desserts</li>
-            <li>Customer satisfaction</li>
-        </ul>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div class="container">
-
-        <h2>How Our Products Are Made</h2>
-
-        <ol class="list-box">
-            <li>We select the ingredients.</li>
-            <li>We prepare the dough.</li>
-            <li>The dough is rested and shaped.</li>
-            <li>The products are baked.</li>
-            <li>They are decorated and prepared for customers.</li>
-        </ol>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <p><strong>Sweet Crumb Bakery Team</strong></p>
-
-    <p>
-        NURLANKYZY ZHANSHUAK |
-        SRAZHDIN YASMIN |
-        URINBAY NURGUL
-    </p>
-
-    <p>Front-End Development Assignment 1</p>
-
-</footer>
+</div>
 
 </body>
 
