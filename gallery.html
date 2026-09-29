@@ -1,88 +1,139 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <!-- Page created by NURLANKYZY ZHANSHUAK -->
+<!-- Page created by NURLANKYZY ZHANSHUAK -->
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>
-        Sweet Crumb Bakery | Gallery
-    </title>
+<title>
+    Sweet Crumb Bakery | Gallery
+</title>
 
-    <link rel="stylesheet"
-          href="css/style.css">
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
 
 </head>
-
 
 <body>
 
 <header id="main-header">
 
-    <nav class="nav-container">
+<nav class="navbar navbar-expand-lg navbar-dark">
 
-        <a class="logo"
-           href="index.html">
+    <div class="container">
 
+        <a
+            class="navbar-brand logo"
+            href="index.html"
+        >
             Sweet Crumb Bakery
-
         </a>
 
 
-        <ul class="nav-menu">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
 
-            <li>
-                <a href="menu.html">
-                    Menu
-                </a>
-            </li>
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar"
+        >
 
-            <li>
-                <a href="about.html">
-                    About
-                </a>
-            </li>
+            <ul class="navbar-nav ms-auto">
 
-            <li>
-                <a class="active"
-                   href="gallery.html">
-                    Gallery
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+                        Home
+                    </a>
+                </li>
 
-            <li>
-                <a href="order.html">
-                    Order
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="menu.html"
+                    >
+                        Menu
+                    </a>
+                </li>
 
-            <li>
-                <a href="contact.html">
-                    Contact
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="about.html"
+                    >
+                        About
+                    </a>
+                </li>
 
-        </ul>
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        aria-current="page"
+                        href="gallery.html"
+                    >
+                        Gallery
+                    </a>
+                </li>
 
-    </nav>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="order.html"
+                    >
+                        Order
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="contact.html"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
 
 </header>
 
-
 <main>
 
-<section class="section">
+
+<section class="section py-5">
 
     <div class="container">
 
@@ -90,234 +141,348 @@
             Bakery Gallery
         </h1>
 
-        <p>
+        <p class="fs-5">
             A small collection presenting the style
             and products of Sweet Crumb Bakery.
         </p>
 
+    </div>
 
-        <!-- =========================
-             CSS GRID GALLERY
-             ========================= -->
-
-        <div class="gallery-grid">
+</section>
 
 
-            <!-- IMAGE 1 -->
 
-            <article class="gallery-item">
+<section class="section pb-5">
 
-                <img
-                    src="images/gallery.jpg"
-                    alt="Fresh pastries"
-                >
+    <div class="container">
 
-                <div class="gallery-caption">
-
-                    <h3>
-                        Fresh Pastries
-                    </h3>
-
-                    <p>
-                        Handmade pastries prepared every morning.
-                    </p>
-
-                </div>
-
-            </article>
+        <h2 class="text-center mb-4">
+            Featured Bakery Images
+        </h2>
 
 
-            <!-- IMAGE 2 -->
-
-            <article class="gallery-item">
-
-                <img
-                    src="images/menu.jpg"
-                    alt="Artisan bread"
-                >
-
-                <div class="gallery-caption">
-
-                    <h3>
-                        Artisan Bread
-                    </h3>
-
-                    <p>
-                        Bread prepared using traditional methods.
-                    </p>
-
-                </div>
-
-            </article>
+        <div
+            id="galleryCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            aria-label="Sweet Crumb Bakery gallery"
+        >
 
 
-            <!-- IMAGE 3 -->
+            <div class="carousel-indicators">
 
-            <article class="gallery-item">
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
 
-                <img
-                    src="images/order.jpg"
-                    alt="Custom cake"
-                >
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
 
-                <div class="gallery-caption">
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
 
-                    <h3>
-                        Custom Cakes
-                    </h3>
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                ></button>
 
-                    <p>
-                        Cakes for birthdays and celebrations.
-                    </p>
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="4"
+                    aria-label="Slide 5"
+                ></button>
 
-                </div>
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="5"
+                    aria-label="Slide 6"
+                ></button>
 
-            </article>
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="6"
+                    aria-label="Slide 7"
+                ></button>
+
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="7"
+                    aria-label="Slide 8"
+                ></button>
+
+                <button
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide-to="8"
+                    aria-label="Slide 9"
+                ></button>
+
+            </div>
 
 
-            <!-- IMAGE 4 -->
 
-            <article class="gallery-item">
+            <div class="carousel-inner rounded shadow">
 
-                <img
-                    src="images/bakery-home.jpg"
-                    alt="Bakery products"
-                >
+                <div class="carousel-item active">
 
-                <div class="gallery-caption">
+                    <img
+                        src="images/gallery.jpg"
+                        class="d-block w-100"
+                        alt="Fresh pastries"
+                    >
 
-                    <h3>
-                        Bakery Products
-                    </h3>
+                    <div class="carousel-caption d-none d-md-block">
 
-                    <p>
-                        Fresh products made every day.
-                    </p>
+                        <h3>
+                            Fresh Pastries
+                        </h3>
 
-                </div>
+                        <p>
+                            Handmade pastries prepared every morning.
+                        </p>
 
-            </article>
-
-
-            <!-- IMAGE 5 -->
-
-            <article class="gallery-item">
-
-                <img
-                    src="images/about.jpg"
-                    alt="Baker preparing products"
-                >
-
-                <div class="gallery-caption">
-
-                    <h3>
-                        Our Bakers
-                    </h3>
-
-                    <p>
-                        Our bakers prepare every product carefully.
-                    </p>
+                    </div>
 
                 </div>
 
-            </article>
 
+                <div class="carousel-item">
 
-            <!-- IMAGE 6 -->
+                    <img
+                        src="images/menu.jpg"
+                        class="d-block w-100"
+                        alt="Artisan bread"
+                    >
 
-            <article class="gallery-item">
+                    <div class="carousel-caption d-none d-md-block">
 
-                <img
-                    src="images/contact.jpg"
-                    alt="Bakery interior"
-                >
+                        <h3>
+                            Artisan Bread
+                        </h3>
 
-                <div class="gallery-caption">
+                        <p>
+                            Bread prepared using traditional methods.
+                        </p>
 
-                    <h3>
-                        Bakery Atmosphere
-                    </h3>
-
-                    <p>
-                        A warm and welcoming place for customers.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- IMAGE 7 -->
-
-            <article class="gallery-item">
-
-                <img
-                    src="images/croissant.jpg"
-                    alt="Fresh croissant"
-                >
-
-                <div class="gallery-caption">
-
-                    <h3>
-                        Croissants
-                    </h3>
-
-                    <p>
-                        Light and flaky fresh croissants.
-                    </p>
+                    </div>
 
                 </div>
 
-            </article>
 
+                <div class="carousel-item">
 
-            <!-- IMAGE 8 -->
+                    <img
+                        src="images/order.jpg"
+                        class="d-block w-100"
+                        alt="Custom cake"
+                    >
 
-            <article class="gallery-item">
+                    <div class="carousel-caption d-none d-md-block">
 
-                <img
-                    src="images/bread.jpg"
-                    alt="Fresh bread"
-                >
+                        <h3>
+                            Custom Cakes
+                        </h3>
 
-                <div class="gallery-caption">
+                        <p>
+                            Cakes for birthdays and celebrations.
+                        </p>
 
-                    <h3>
-                        Fresh Bread
-                    </h3>
-
-                    <p>
-                        Freshly baked bread from our bakery.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- IMAGE 9 -->
-
-            <article class="gallery-item">
-
-                <img
-                    src="images/cake.jpg"
-                    alt="Chocolate cake"
-                >
-
-                <div class="gallery-caption">
-
-                    <h3>
-                        Chocolate Cake
-                    </h3>
-
-                    <p>
-                        Rich chocolate cake with smooth cream.
-                    </p>
+                    </div>
 
                 </div>
 
-            </article>
 
+                <div class="carousel-item">
+
+                    <img
+                        src="images/bakery-home.jpg"
+                        class="d-block w-100"
+                        alt="Bakery products"
+                    >
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h3>
+                            Bakery Products
+                        </h3>
+
+                        <p>
+                            Fresh products made every day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="images/about.jpg"
+                        class="d-block w-100"
+                        alt="Baker preparing products"
+                    >
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h3>
+                            Our Bakers
+                        </h3>
+
+                        <p>
+                            Our bakers prepare every product carefully.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="images/contact.jpg"
+                        class="d-block w-100"
+                        alt="Bakery interior"
+                    >
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h3>
+                            Bakery Atmosphere
+                        </h3>
+
+                        <p>
+                            A warm and welcoming place for customers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="images/croissant.jpg"
+                        class="d-block w-100"
+                        alt="Fresh croissant"
+                    >
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h3>
+                            Croissants
+                        </h3>
+
+                        <p>
+                            Light and flaky fresh croissants.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="images/bread.jpg"
+                        class="d-block w-100"
+                        alt="Fresh bread"
+                    >
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h3>
+                            Fresh Bread
+                        </h3>
+
+                        <p>
+                            Freshly baked bread from our bakery.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="images/cake.jpg"
+                        class="d-block w-100"
+                        alt="Chocolate cake"
+                    >
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h3>
+                            Chocolate Cake
+                        </h3>
+
+                        <p>
+                            Rich chocolate cake with smooth cream.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide="prev"
+                aria-label="Previous image"
+            >
+
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+
+            </button>
+
+
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide="next"
+                aria-label="Next image"
+            >
+
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+
+            </button>
 
         </div>
 
@@ -326,30 +491,183 @@
 </section>
 
 
+
 <section class="section">
+    <div class="container">
 
-    <div class="container team-box">
+        <h2 class="mb-4">Our Bakery Collection</h2>
 
-        <h2>
-            About the Team Member
+        <div class="task2-cards">
+
+            <article class="card bakery-card h-100">
+
+                <img src="images/croissant.jpg"
+                     alt="Fresh croissants"
+                     class="card-img-top">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h3 class="card-title">
+                        Croissants
+                    </h3>
+
+                    <p class="card-text">
+                        Light and flaky croissants baked fresh
+                        for our customers.
+                    </p>
+
+                    <a href="menu.html"
+                       class="btn btn-primary mt-auto">
+                        View Menu
+                    </a>
+
+                </div>
+            </article>
+
+
+            <article class="card bakery-card h-100">
+
+                <img src="images/bread.jpg"
+                     alt="Freshly baked bread"
+                     class="card-img-top">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h3 class="card-title">
+                        Fresh Bread
+                    </h3>
+
+                    <p class="card-text">
+                        Traditional bread prepared and baked
+                        fresh every day.
+                    </p>
+
+                    <a href="menu.html"
+                       class="btn btn-primary mt-auto">
+                        View Menu
+                    </a>
+
+                </div>
+            </article>
+
+
+            <article class="card bakery-card h-100">
+
+                <img src="images/cake.jpg"
+                     alt="Chocolate cake"
+                     class="card-img-top">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h3 class="card-title">
+                        Chocolate Cakes
+                    </h3>
+
+                    <p class="card-text">
+                        Rich chocolate cakes prepared for
+                        birthdays and special celebrations.
+                    </p>
+
+                    <a href="order.html"
+                       class="btn btn-primary mt-auto">
+                        Order Cake
+                    </a>
+
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="section py-5">
+
+    <div class="container text-center">
+
+        <h2 class="mb-3">
+            Explore More
         </h2>
 
-        <img
-            src="images/gallery.jpg"
-            alt="Feature image representing team member work"
-            class="round-image"
+        <div
+            class="btn-group"
+            role="group"
+            aria-label="Gallery navigation"
         >
 
-        <h3>
-            NURLANKYZY ZHANSHUAK
-        </h3>
+            <a
+                href="menu.html"
+                class="btn btn-primary"
+            >
+                Menu
+            </a>
 
-        <p>
-            I created the About and Gallery pages.
-            I was responsible for structured text,
-            lists, gallery cards, images and
-            visual presentation.
-        </p>
+            <a
+                href="order.html"
+                class="btn btn-primary"
+            >
+                Order
+            </a>
+
+            <a
+                href="contact.html"
+                class="btn btn-primary"
+            >
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="section py-5">
+
+    <div class="container">
+
+        <div class="team-box p-4">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-md-4 text-center">
+
+                    <img
+                        src="images/gallery.jpg"
+                        alt="Feature image representing team member work"
+                        class="round-image img-fluid"
+                    >
+
+                </div>
+
+
+                <div class="col-md-8">
+
+                    <h2>
+                        About the Team Member
+                    </h2>
+
+                    <h3 class="mt-3">
+                        NURLANKYZY ZHANSHUAK
+                    </h3>
+
+                    <p>
+                        I created the About and Gallery pages.
+                        I was responsible for structured text,
+                        lists, gallery cards, images and
+                        visual presentation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -357,8 +675,9 @@
 
 </main>
 
-
 <footer>
+
+<div class="container text-center py-4">
 
     <p>
         <strong>
@@ -373,11 +692,17 @@
     </p>
 
     <p>
-        Front-End Development Assignment 2
+        Front-End Development Assignment 3
     </p>
+
+</div>
 
 </footer>
 
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
 

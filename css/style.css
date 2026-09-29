@@ -540,7 +540,7 @@ form textarea {
 
     padding: 30px;
 
-    border-left: 6px solid white;
+    border-left: 6px solid #6f3d28;
 
     border-radius: 10px;
 }
@@ -652,11 +652,6 @@ footer p {
     }
 }
 
-/* =========================================
-   ORDER PAGE - ASSIGNMENT 2
-   CSS GRID LAYOUT
-   Created by URINBAY NURGUL
-   ========================================= */
 
 .order-page {
     min-height: 100vh;
@@ -673,7 +668,6 @@ footer p {
 }
 
 
-/* GRID AREAS */
 
 .order-header {
     grid-area: header;
@@ -692,7 +686,6 @@ footer p {
 }
 
 
-/* SIDEBAR */
 
 .order-sidebar {
     background-color: #f8e7d8;
@@ -730,7 +723,6 @@ footer p {
 }
 
 
-/* MAIN CONTENT */
 
 .order-main {
     padding: 50px;
@@ -751,8 +743,6 @@ footer p {
 }
 
 
-/* ORDER FORM */
-
 .order-form {
     display: flex;
     flex-direction: column;
@@ -763,8 +753,6 @@ footer p {
     margin-bottom: 15px;
 }
 
-
-/* ORDER INFORMATION */
 
 .order-info {
     max-width: 900px;
@@ -789,7 +777,6 @@ footer p {
 }
 
 
-/* RESPONSIVE ORDER PAGE */
 
 @media (max-width: 800px) {
 
@@ -820,11 +807,9 @@ footer p {
 }
 
 
-/* =========================================
-   ASSIGNMENT 2
-   CONTACT PAGE - FLEXBOX CARDS
-   ========================================= */
-
+.bakery-navbar {
+    background-color: #6f3d28;
+}
 .contact-cards {
     display: flex;
     flex-wrap: wrap;
@@ -855,9 +840,198 @@ footer p {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-    /* CONTACT PAGE */
 
     .contact-cards {
         flex-direction: column;
     }
 
+.order-page {
+    display: block;
+    min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+body {
+    font-size: 0.95rem;
+}
+
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.9rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+body {
+    font-size: 1rem;
+}
+
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+body {
+    font-size: 1.05rem;
+}
+
+}
+
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.bakery-card {
+    background-color: #fff3e8;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bakery-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.bakery-card-content {
+    padding: 20px;
+}
+
+.bakery-card h3 {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .card-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .card-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   TASK 2 - RESPONSIVE CARD GROUP
+   ========================================= */
+
+.task2-cards {
+    display: flex;
+    gap: 24px;
+}
+
+/* Desktop - 3 cards in one row */
+.task2-cards .bakery-card {
+    flex: 1;
+}
+
+/* Tablet - 2 cards in one row */
+@media (max-width: 991px) and (min-width: 768px) {
+    .task2-cards {
+        flex-wrap: wrap;
+    }
+
+    .task2-cards .bakery-card {
+        flex: 0 0 calc(50% - 12px);
+    }
+}
+
+/* Mobile - cards stacked vertically */
+@media (max-width: 767px) {
+    .task2-cards {
+        flex-direction: column;
+    }
+
+    .task2-cards .bakery-card {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   ASSIGNMENT 3 - CAROUSEL IMAGE SIZE
+   ========================================= */
+
+#galleryCarousel .carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    #galleryCarousel .carousel-item img {
+        height: 350px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    #galleryCarousel .carousel-item img {
+        height: 250px;
+    }
+}
+
+/* =========================================
+   HOME CAROUSEL - FIXED IMAGE SIZE
+   ========================================= */
+
+#bakeryCarousel .carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    #bakeryCarousel .carousel-item img {
+        height: 350px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    #bakeryCarousel .carousel-item img {
+        height: 250px;
+    }
+}
