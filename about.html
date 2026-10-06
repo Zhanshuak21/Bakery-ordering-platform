@@ -1,423 +1,192 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <!-- Page created by NURLANKYZY ZHANSHUAK -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumb Bakery | About Us</title>
 
-<title>Sweet Crumb Bakery | About Us</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
->
-
-<link rel="stylesheet" href="css/style.css">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<div class="page-layout">
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bakery-navbar">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Sweet Crumb Bakery</a>
 
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<header id="main-header" class="grid-header">
-
-    <nav class="navbar navbar-expand-lg navbar-dark">
-
-        <div class="container">
-
-            <a class="navbar-brand logo" href="index.html">
-                Sweet Crumb Bakery
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNavbar">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html">
-                            Menu
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="about.html"
-                        >
-                            About
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">
-                            Gallery
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="order.html">
-                            Order
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-        </div>
-
-    </nav>
-
-</header>
-
-
-
-<aside class="grid-sidebar">
-
-    <div class="p-3">
-
-        <h2 class="h4">
-            About Our Bakery
-        </h2>
-
-        <ul>
-
-            <li>
-                <a href="#about">
-                    About Us
-                </a>
-            </li>
-
-            <li>
-                <a href="#values">
-                    Our Values
-                </a>
-            </li>
-
-            <li>
-                <a href="#process">
-                    Our Process
-                </a>
-            </li>
-
-            <li>
-                <a href="gallery.html">
-                    View Gallery
-                </a>
-            </li>
-
-            <li>
-                <a href="menu.html">
-                    View Menu
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</aside>
-
-
-
-<main class="grid-main">
-
-    <section id="about" class="section py-5">
-
-        <div class="container">
-
-            <div class="row align-items-center g-4">
-
-                <div class="col-lg-6">
-
-                    <h1>
-                        About Sweet Crumb Bakery
-                    </h1>
-
-                    <p class="fs-5">
-                        Sweet Crumb Bakery is a fictional local bakery
-                        created for our Front-End Development project.
-                    </p>
-
-                    <p>
-                        Our concept focuses on fresh products, warm design
-                        and a welcoming atmosphere for customers.
-                    </p>
-
-                    <div class="mt-lg-4">
-
-                        <a
-                            href="menu.html"
-                            class="btn btn-primary"
-                        >
-                            View Our Menu
-                        </a>
-
-                        <a
-                            href="contact.html"
-                            class="btn btn-outline-secondary ms-2"
-                        >
-                            Contact Us
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="col-lg-6">
-
-                    <img
-                        src="images/about.jpg"
-                        alt="Baker preparing fresh bakery products"
-                        class="img-fluid rounded shadow-sm"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section id="values" class="section py-5">
-
-        <div class="container">
-
-            <h2 class="text-center mb-4">
-                Our Values
-            </h2>
-
-
-            <div class="row g-4">
-
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <article class="card h-100 shadow-sm">
-
-                        <div class="card-body">
-
-                            <h3 class="card-title">
-                                Quality
-                            </h3>
-
-                            <p class="card-text">
-                                We focus on quality ingredients
-                                and carefully prepared bakery products.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <article class="card h-100 shadow-sm">
-
-                        <div class="card-body">
-
-                            <h3 class="card-title">
-                                Freshness
-                            </h3>
-
-                            <p class="card-text">
-                                Our products are prepared fresh
-                                to provide customers with a pleasant
-                                experience.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <article class="card h-100 shadow-sm">
-
-                        <div class="card-body">
-
-                            <h3 class="card-title">
-                                Creativity
-                            </h3>
-
-                            <p class="card-text">
-                                We create different bakery products
-                                and seasonal desserts.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section id="process" class="section py-5">
-
-        <div class="container">
-
-            <h2 class="mb-4">
-                How Our Products Are Made
-            </h2>
-
-            <ol class="list-box">
-
-                <li>
-                    We select the ingredients.
-                </li>
-
-                <li>
-                    We prepare the dough.
-                </li>
-
-                <li>
-                    The dough is rested and shaped.
-                </li>
-
-                <li>
-                    The products are baked.
-                </li>
-
-                <li>
-                    They are decorated and prepared for customers.
-                </li>
-
-            </ol>
-
-        </div>
-
-    </section>
-
-
-    <section class="section py-5">
-
-        <div class="container">
-
-            <div class="team-box p-4">
-
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+        <!-- ABOUT INTRO -->
+        <section id="about" class="section py-5">
+            <div class="container">
                 <div class="row align-items-center g-4">
-
-                    <div class="col-md-4 text-center">
-
-                        <img
-                            src="images/gallery.jpg"
-                            alt="Feature image representing team member work"
-                            class="round-image img-fluid"
-                        >
-
-                    </div>
-
-                    <div class="col-md-8">
-
-                        <h2>
-                            About the Team Member
-                        </h2>
-
-                        <h3 class="mt-3">
-                            NURLANKYZY ZHANSHUAK
-                        </h3>
-
-                        <p>
-                            I created the About and Gallery pages.
-                            I was responsible for structured text,
-                            lists, gallery cards, images and visual
-                            presentation.
+                    <div class="col-lg-6">
+                        <h1>About Sweet Crumb Bakery</h1>
+                        <p class="fs-5">
+                            Sweet Crumb Bakery is a fictional local bakery
+                            created for our Front-End Development project.
                         </p>
-
-                        <a
-                            href="gallery.html"
-                            class="btn btn-primary"
-                        >
-                            View Gallery
-                        </a>
-
+                        <p>
+                            Our concept focuses on fresh products, warm design
+                            and a welcoming atmosphere for customers.
+                        </p>
+                        <div class="mt-4 d-flex flex-wrap gap-2">
+                            <a href="menu.html" class="btn btn-primary">View Our Menu</a>
+                            <a href="contact.html" class="btn btn-outline-secondary">Contact Us</a>
+                        </div>
                     </div>
 
+                    <div class="col-lg-6">
+                        <img src="images/about.jpg"
+                             alt="Baker preparing fresh bakery products"
+                             class="img-fluid rounded shadow">
+                    </div>
                 </div>
-
             </div>
+        </section>
 
+        <!-- OUR VALUES -->
+        <section id="values" class="section py-5 bg-light-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Values</h2>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Quality</h3>
+                                <p class="card-text">
+                                    We focus on quality ingredients
+                                    and carefully prepared bakery products.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Freshness</h3>
+                                <p class="card-text">
+                                    Our products are prepared fresh
+                                    to provide customers with a pleasant experience.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Creativity</h3>
+                                <p class="card-text">
+                                    We create different bakery products
+                                    and seasonal desserts.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR PROCESS -->
+        <section id="process" class="section py-5">
+            <div class="container">
+                <h2 class="mb-4">How Our Products Are Made</h2>
+                <ol class="list-box">
+                    <li>We select the ingredients.</li>
+                    <li>We prepare the dough.</li>
+                    <li>The dough is rested and shaped.</li>
+                    <li>The products are baked.</li>
+                    <li>They are decorated and prepared for customers.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ABOUT TEAM MEMBER -->
+        <section class="section py-5 bg-light-section">
+            <div class="container">
+                <div class="team-box p-4">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4 text-center">
+                            <img src="images/gallery.jpg"
+                                 alt="Feature image representing team member work"
+                                 class="round-image img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>About the Team Member</h2>
+                            <h3 class="mt-3">NURLANKYZY ZHANSHUAK</h3>
+                            <p>
+                                I created the About and Gallery pages.
+                                I was responsible for structured text,
+                                lists, gallery cards, images and visual presentation.
+                            </p>
+                            <a href="gallery.html" class="btn btn-primary mt-2">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container text-center py-4">
+            <p><strong>Sweet Crumb Bakery Team</strong></p>
+            <p>
+                NURLANKYZY ZHANSHUAK |
+                SRAZHDIN YASMIN |
+                URINBAY NURGUL
+            </p>
+            <p>Front-End Development — Midterm Project</p>
         </div>
+    </footer>
 
-    </section>
-
-</main>
-
-
-
-<footer class="grid-footer">
-
-    <div class="container text-center py-4">
-
-        <p>
-            <strong>
-                Sweet Crumb Bakery Team
-            </strong>
-        </p>
-
-        <p>
-            NURLANKYZY ZHANSHUAK |
-            SRAZHDIN YASMIN |
-            URINBAY NURGUL
-        </p>
-
-        <p>
-            Front-End Development Assignment 3
-        </p>
-
-    </div>
-
-</footer>
-
-</div>
-
-
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

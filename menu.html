@@ -1,424 +1,224 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <!-- Page created by SRAZHDIN YASMIN -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumb Bakery | Menu</title>
 
-<title>Sweet Crumb Bakery | Menu</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
->
-
-<link rel="stylesheet" href="css/style.css">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<header id="main-header">
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bakery-navbar">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Sweet Crumb Bakery</a>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <div class="container">
-
-        <a class="navbar-brand logo" href="index.html">
-            Sweet Crumb Bakery
-        </a>
-
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNavbar">
-
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link active"
-                        aria-current="page"
-                        href="menu.html"
-                    >
-                        Menu
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">
-                        About
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="gallery.html">
-                        Gallery
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="order.html">
-                        Order
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
-
-</header>
-
-<main>
-
-<section class="section py-5">
-
-    <div class="container">
-
-        <div class="row align-items-center g-4">
-
-            <div class="col-lg-6">
-
-                <h1>Our Bakery Menu</h1>
-
-                <p class="fs-5">
-                    Discover our selection of freshly baked breads,
-                    pastries, cakes and desserts.
-                </p>
-
-                <div class="mt-lg-4">
-
-                    <a
-                        href="order.html"
-                        class="btn btn-primary"
-                    >
-                        Order Now
-                    </a>
-
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-
             </div>
+        </nav>
+    </header>
 
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
 
-            <div class="col-lg-6">
-
-                <img
-                    src="images/menu.jpg"
-                    alt="Selection of pastries from Sweet Crumb Bakery"
-                    class="img-fluid rounded shadow-sm"
-                >
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section py-5">
-
-    <div class="container">
-
-        <h2 class="text-center mb-4">
-            Popular Products
-        </h2>
-
-
-
-        <div class="row g-4">
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm">
-
-                    <div class="card-body">
-
-                        <h3 class="card-title">
-                            Butter Croissant
-                        </h3>
-
-                        <p class="card-text">
-                            A light and flaky croissant made with butter.
+        <!-- INTRO SECTION -->
+        <section class="section py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <h1>Our Bakery Menu</h1>
+                        <p class="fs-5">
+                            Discover our selection of freshly baked breads,
+                            pastries, cakes and desserts.
                         </p>
-
-                        <p>
-                            <strong>1,200 KZT</strong>
-                        </p>
-
-                        <a
-                            href="order.html"
-                            class="btn btn-primary"
-                        >
-                            Order
-                        </a>
-
+                        <div class="mt-4">
+                            <a href="order.html" class="btn btn-primary btn-lg">Order Now</a>
+                        </div>
                     </div>
 
-                </article>
-
+                    <div class="col-lg-6">
+                        <img src="images/menu.jpg"
+                             alt="Selection of pastries from Sweet Crumb Bakery"
+                             class="img-fluid rounded shadow">
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="col-12 col-md-6 col-lg-4">
+        <!-- POPULAR PRODUCTS -->
+        <section class="section py-5 bg-light-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Popular Products</h2>
 
-                <article class="card h-100 shadow-sm">
-
-                    <div class="card-body">
-
-                        <h3 class="card-title">
-                            Cinnamon Roll
-                        </h3>
-
-                        <p class="card-text">
-                            Soft dough filled with cinnamon and sugar.
-                        </p>
-
-                        <p>
-                            <strong>1,500 KZT</strong>
-                        </p>
-
-                        <a
-                            href="order.html"
-                            class="btn btn-primary"
-                        >
-                            Order
-                        </a>
-
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Butter Croissant</h3>
+                                <p class="card-text">
+                                    A light and flaky croissant made with butter.
+                                </p>
+                                <p class="fw-bold text-accent">1,200 KZT</p>
+                                <a href="order.html" class="btn btn-primary mt-auto">Order</a>
+                            </div>
+                        </article>
                     </div>
 
-                </article>
-
-            </div>
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm">
-
-                    <div class="card-body">
-
-                        <h3 class="card-title">
-                            Chocolate Cake
-                        </h3>
-
-                        <p class="card-text">
-                            Rich chocolate sponge with smooth
-                            chocolate cream.
-                        </p>
-
-                        <p>
-                            <strong>9,500 KZT</strong>
-                        </p>
-
-                        <a
-                            href="order.html"
-                            class="btn btn-primary"
-                        >
-                            Order
-                        </a>
-
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Cinnamon Roll</h3>
+                                <p class="card-text">
+                                    Soft dough filled with cinnamon and sugar.
+                                </p>
+                                <p class="fw-bold text-accent">1,500 KZT</p>
+                                <a href="order.html" class="btn btn-primary mt-auto">Order</a>
+                            </div>
+                        </article>
                     </div>
 
-                </article>
-
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Chocolate Cake</h3>
+                                <p class="card-text">
+                                    Rich chocolate sponge with smooth chocolate cream.
+                                </p>
+                                <p class="fw-bold text-accent">9,500 KZT</p>
+                                <a href="order.html" class="btn btn-primary mt-auto">Order</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <!-- PRICE TABLE -->
+        <section class="section py-5">
+            <div class="container">
+                <h2 class="mb-4">Price Table</h2>
 
-    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Availability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Croissant</td>
+                                <td>Pastry</td>
+                                <td>1,200 KZT</td>
+                                <td>Daily</td>
+                            </tr>
+                            <tr>
+                                <td>Sourdough Bread</td>
+                                <td>Bread</td>
+                                <td>1,800 KZT</td>
+                                <td>Daily</td>
+                            </tr>
+                            <tr>
+                                <td>Cinnamon Roll</td>
+                                <td>Pastry</td>
+                                <td>1,500 KZT</td>
+                                <td>Daily</td>
+                            </tr>
+                            <tr>
+                                <td>Chocolate Cake</td>
+                                <td>Cake</td>
+                                <td>9,500 KZT</td>
+                                <td>Pre-order</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-</section>
+        <!-- EXPLORE MORE -->
+        <section class="section py-5 bg-light-section">
+            <div class="container text-center">
+                <h2 class="mb-4">Explore Our Bakery</h2>
+                <div class="btn-group" role="group" aria-label="Bakery navigation">
+                    <a href="index.html" class="btn btn-primary">Home</a>
+                    <a href="gallery.html" class="btn btn-primary">Gallery</a>
+                    <a href="order.html" class="btn btn-primary">Order</a>
+                </div>
+            </div>
+        </section>
 
+        <!-- ABOUT TEAM MEMBER -->
+        <section class="section py-5">
+            <div class="container">
+                <div class="team-box p-4">
+                    <h2>About the Team Member</h2>
+                    <h3 class="mt-3">SRAZHDIN YASMIN</h3>
+                    <p>
+                        I was responsible for creating the Home and Menu pages.
+                        My work included page structure, navigation, menu cards,
+                        product information and the bakery pricing table.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-<section class="section py-5">
+    </main>
 
-    <div class="container">
-
-        <h2 class="mb-4">
-            Price Table
-        </h2>
-
-        <div class="table-responsive">
-
-            <table class="table table-bordered table-striped">
-
-                <thead>
-
-                <tr>
-                    <th scope="col">Product</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Availability</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-
-                <tr>
-                    <td>Croissant</td>
-                    <td>Pastry</td>
-                    <td>1,200 KZT</td>
-                    <td>Daily</td>
-                </tr>
-
-                <tr>
-                    <td>Sourdough Bread</td>
-                    <td>Bread</td>
-                    <td>1,800 KZT</td>
-                    <td>Daily</td>
-                </tr>
-
-                <tr>
-                    <td>Cinnamon Roll</td>
-                    <td>Pastry</td>
-                    <td>1,500 KZT</td>
-                    <td>Daily</td>
-                </tr>
-
-                <tr>
-                    <td>Chocolate Cake</td>
-                    <td>Cake</td>
-                    <td>9,500 KZT</td>
-                    <td>Pre-order</td>
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section py-5">
-
-    <div class="container text-center">
-
-        <h2 class="mb-3">
-            Explore Our Bakery
-        </h2>
-
-        <div
-            class="btn-group"
-            role="group"
-            aria-label="Bakery navigation"
-        >
-
-            <a
-                href="index.html"
-                class="btn btn-primary"
-            >
-                Home
-            </a>
-
-            <a
-                href="gallery.html"
-                class="btn btn-primary"
-            >
-                Gallery
-            </a>
-
-            <a
-                href="order.html"
-                class="btn btn-primary"
-            >
-                Order
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section py-5">
-
-    <div class="container">
-
-        <div class="team-box p-4">
-
-            <h2>
-                About the Team Member
-            </h2>
-
-            <h3 class="mt-3">
-                SRAZHDIN YASMIN
-            </h3>
-
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container text-center py-4">
+            <p><strong>Sweet Crumb Bakery Team</strong></p>
             <p>
-                I was responsible for creating the Home and Menu pages.
-                My work included page structure, navigation, menu cards,
-                product information and the bakery pricing table.
+                NURLANKYZY ZHANSHUAK |
+                SRAZHDIN YASMIN |
+                URINBAY NURGUL
             </p>
-
+            <p>Front-End Development — Midterm Project</p>
         </div>
+    </footer>
 
-    </div>
-
-</section>
-
-</main>
-
-<footer>
-
-<div class="container text-center py-4">
-
-    <p>
-        <strong>Sweet Crumb Bakery Team</strong>
-    </p>
-
-    <p>
-        NURLANKYZY ZHANSHUAK |
-        SRAZHDIN YASMIN |
-        URINBAY NURGUL
-    </p>
-
-    <p>
-        Front-End Development Assignment 3
-    </p>
-
-</div>
-
-</footer>
-
-
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
