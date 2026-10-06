@@ -3,8 +3,7 @@
 
 A responsive multi-page website for a fictional bakery, created as a midterm project for the Front-End Development course.
 
-**Live Demo:** [Insert your GitHub Pages URL here]  
-Example: `https://your-username.github.io/sweet-crumb-bakery/`
+**Live Demo:** `https://zhanshuak21.github.io/Bakery-ordering-platform/`
 
 ---
 
@@ -75,7 +74,7 @@ sweet-crumb-bakery/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Zhanshuak21/Bakery-ordering-platform.git
+   git clone `https://github.com/Zhanshuak21/Bakery-ordering-platform.git`
    
 2. Open `index.html` in your browser.
 
