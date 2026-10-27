@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page created by NURLANKYZY ZHANSHUAK -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumb Bakery | About Us</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bakery-navbar">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Sweet Crumb Bakery</a>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                                            <li class="nav-item d-flex align-items-center">
+                            <button type="button" id="theme-toggle" class="btn btn-outline-light btn-sm">🌙 Night</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+        <!-- ABOUT INTRO -->
+        <section id="about" class="section py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <h1>About Sweet Crumb Bakery</h1>
+                        <p class="fs-5">
+                            Sweet Crumb Bakery is a fictional local bakery
+                            created for our Front-End Development project.
+                        </p>
+                        <p>
+                            Our concept focuses on fresh products, warm design
+                            and a welcoming atmosphere for customers.
+                        </p>
+                        <div id="extra-content">
+                            <p>
+                                Sweet Crumb Bakery started as a small family idea.
+                                We carefully select ingredients, bake every morning,
+                                and create seasonal desserts that bring people together.
+                                Our team loves experimenting with new flavours while
+                                keeping traditional recipes alive.
+                            </p>
+                        </div>
+                        <button type="button" id="read-more-btn" class="btn btn-outline-secondary btn-sm mb-3">Read More</button>
+                        <div class="mt-2 d-flex flex-wrap gap-2">
+                            <a href="menu.html" class="btn btn-primary">View Our Menu</a>
+                            <a href="contact.html" class="btn btn-outline-secondary">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="images/about.jpg"
+                             alt="Baker preparing fresh bakery products"
+                             class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR VALUES -->
+        <section id="values" class="section py-5 bg-light-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Values</h2>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Quality</h3>
+                                <p class="card-text">
+                                    We focus on quality ingredients
+                                    and carefully prepared bakery products.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Freshness</h3>
+                                <p class="card-text">
+                                    Our products are prepared fresh
+                                    to provide customers with a pleasant experience.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm bakery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Creativity</h3>
+                                <p class="card-text">
+                                    We create different bakery products
+                                    and seasonal desserts.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR PROCESS -->
+        <section id="process" class="section py-5">
+            <div class="container">
+                <h2 class="mb-4">How Our Products Are Made</h2>
+                <ol class="list-box">
+                    <li>We select the ingredients.</li>
+                    <li>We prepare the dough.</li>
+                    <li>The dough is rested and shaped.</li>
+                    <li>The products are baked.</li>
+                    <li>They are decorated and prepared for customers.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION -->
+        <section id="faq" class="section py-5 bg-light-section">
+            <div class="container">
+                <h2 class="text-center mb-3">Frequently Asked Questions</h2>
+                <p class="text-center mb-5">
+                    Have questions about our bakery? Find your answers below.
+                </p>
+
+                <div class="faq-list mx-auto" style="max-width: 800px;">
+
+                    <!-- Question 1 -->
+                    <div class="faq-item mb-3 p-3 bg-white rounded border">
+                        <button type="button"
+                                class="faq-question btn w-100 text-start fw-bold"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-1"
+                                id="faq-question-1">
+                            What products does Sweet Crumb Bakery offer?
+                            <span class="faq-icon float-end" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer"
+                             id="faq-answer-1"
+                             role="region"
+                             aria-labelledby="faq-question-1"
+                             hidden>
+                            We offer custom cakes, fresh bread, pastries,
+                            and other delicious bakery products.
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="faq-item mb-3 p-3 bg-white rounded border">
+                        <button type="button"
+                                class="faq-question btn w-100 text-start fw-bold"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-2"
+                                id="faq-question-2">
+                            Can I request a custom cake?
+                            <span class="faq-icon float-end" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer"
+                             id="faq-answer-2"
+                             role="region"
+                             aria-labelledby="faq-question-2"
+                             hidden>
+                            Yes! You can use our Order page to select a custom
+                            cake and describe your preferred decoration and details.
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="faq-item mb-3 p-3 bg-white rounded border">
+                        <button type="button"
+                                class="faq-question btn w-100 text-start fw-bold"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-3"
+                                id="faq-question-3">
+                            How are your bakery products prepared?
+                            <span class="faq-icon float-end" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer"
+                             id="faq-answer-3"
+                             role="region"
+                             aria-labelledby="faq-question-3"
+                             hidden>
+                            Our concept focuses on selecting quality ingredients,
+                            preparing the dough, baking the products, and decorating
+                            them before they are ready for customers.
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="faq-item mb-3 p-3 bg-white rounded border">
+                        <button type="button"
+                                class="faq-question btn w-100 text-start fw-bold"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-4"
+                                id="faq-question-4">
+                            How can I contact the bakery?
+                            <span class="faq-icon float-end" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer"
+                             id="faq-answer-4"
+                             role="region"
+                             aria-labelledby="faq-question-4"
+                             hidden>
+                            Visit our Contact page to find the contact information
+                            and send us a message using the contact form.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT TEAM MEMBER -->
+        <section class="section py-5 bg-light-section">
+            <div class="container">
+                <div class="team-box p-4">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4 text-center">
+                            <img src="images/gallery.jpg"
+                                 alt="Feature image representing team member work"
+                                 class="round-image img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>About the Team Member</h2>
+                            <h3 class="mt-3">NURLANKYZY ZHANSHUAK</h3>
+                            <p>
+                                I created the About and Gallery pages.
+                                I was responsible for structured text,
+                                lists, gallery cards, images and visual presentation.
+                            </p>
+                            <a href="gallery.html" class="btn btn-primary mt-2">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container text-center py-4">
+            <p><strong>Sweet Crumb Bakery Team</strong></p>
+            <p>
+                NURLANKYZY ZHANSHUAK |
+                SRAZHDIN YASMIN |
+                URINBAY NURGUL
+            </p>
+            <p>Front-End Development — Assignment 5</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
