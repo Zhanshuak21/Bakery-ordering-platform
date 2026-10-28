@@ -448,11 +448,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const emailField = document.getElementById("popup-email");
             const email = emailField ? emailField.value.trim() : "";
 
-            if (!email || !emailField.validity.valid) {
-                playSound("error");
-                popupForm.reportValidity();
-                return;
-            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!emailRegex.test(email)) {
+    playSound("error");
+    alert("Please enter a valid email address.");
+
+    if (emailField) {
+        emailField.focus();
+    }
+
+    return;
+}
 
             if (popupSuccess) {
                 popupSuccess.hidden = false;
@@ -495,78 +502,137 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+ 
     // ==========================================
-    // 12. CONTACT FORM - ASYNC SUBMIT (Callback)
+    // 12. CONTACT FORM - ASYNC SUBMIT (CALLBACK)
     // ==========================================
 
     const contactForm = document.getElementById("contact-form");
 
     if (contactForm) {
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const successBox = document.getElementById("contact-success");
+
+        const nameError = document.getElementById("contact-name-error");
+        const emailError = document.getElementById("contact-email-error");
+        const messageError = document.getElementById("contact-message-error");
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function showContactError(input, errorElement, errorMessage) {
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+            }
+
+            if (input) {
+                input.classList.toggle("is-invalid", errorMessage !== "");
+                input.setAttribute(
+                    "aria-invalid",
+                    errorMessage !== "" ? "true" : "false"
+                );
+            }
+        }
+
+        function validateContactName() {
+            const value = name.value.trim();
+            const valid = value.length >= 2;
+
+            showContactError(
+                name,
+                nameError,
+                valid ? "" : "Please enter a name with at least 2 characters."
+            );
+
+            return valid;
+        }
+
+        function validateContactEmail() {
+            const value = email.value.trim();
+            const valid = emailRegex.test(value);
+
+            showContactError(
+                email,
+                emailError,
+                valid ? "" : "Please enter a valid email address."
+            );
+
+            return valid;
+        }
+
+        function validateContactMessage() {
+            const value = message.value.trim();
+            const valid = value.length >= 5;
+
+            showContactError(
+                message,
+                messageError,
+                valid ? "" : "Please enter a message with at least 5 characters."
+            );
+
+            return valid;
+        }
+
+        // Live validation
+        name.addEventListener("input", validateContactName);
+        email.addEventListener("input", validateContactEmail);
+        message.addEventListener("input", validateContactMessage);
+
         contactForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            const name = document.getElementById("name");
-            const email = document.getElementById("email");
-            const message = document.getElementById("message");
+            if (successBox) {
+                successBox.hidden = true;
+            }
 
-            const nameVal = name ? name.value.trim() : "";
-            const emailVal = email ? email.value.trim() : "";
-            const messageVal = message ? message.value.trim() : "";
+            const isNameValid = validateContactName();
+            const isEmailValid = validateContactEmail();
+            const isMessageValid = validateContactMessage();
 
-            if (nameVal.length < 2) {
-                alert("Please enter a valid name (at least 2 characters, no spaces only).");
+            if (!isNameValid || !isEmailValid || !isMessageValid) {
                 playSound("error");
-                if (name) name.focus();
+
+                const firstInvalid = contactForm.querySelector(".is-invalid");
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                }
+
                 return;
             }
 
-            if (!emailVal || !email.validity.valid) {
-                alert("Please enter a valid email address.");
-                playSound("error");
-                if (email) email.focus();
-                return;
-            }
-
-            if (messageVal.length < 5) {
-                alert("Message is too short.");
-                playSound("error");
-                if (message) message.focus();
-                return;
-            }
-
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = "Sending...";
             }
 
-            // Simulate async + callback
+            // Simulate asynchronous submission using a callback
             setTimeout(function () {
                 handleContactSuccess();
             }, 1200);
-
-            function handleContactSuccess() {
-                playSound("success");
-
-                let successBox = document.getElementById("contact-success");
-                if (!successBox) {
-                    successBox = document.createElement("div");
-                    successBox.id = "contact-success";
-                    successBox.className = "alert alert-success mt-3";
-                    successBox.setAttribute("role", "status");
-                    contactForm.appendChild(successBox);
-                }
-                successBox.textContent = "Thank you! Your message has been sent successfully.";
-                successBox.hidden = false;
-
-                contactForm.reset();
-
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = "Send Message";
-                }
-            }
         });
+
+        function handleContactSuccess() {
+            playSound("success");
+
+            if (successBox) {
+                successBox.textContent =
+                    "Thank you! Your message has been sent successfully.";
+                successBox.hidden = false;
+            }
+
+            contactForm.reset();
+
+            showContactError(name, nameError, "");
+            showContactError(email, emailError, "");
+            showContactError(message, messageError, "");
+
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+            }
+        }
     }
 
 
@@ -576,153 +642,150 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const orderForm = document.getElementById("order-form");
 
-if (orderForm) {
-    const nameInputOrder = document.getElementById("order-name");
-    const emailInputOrder = document.getElementById("order-email");
-    const productInput = document.getElementById("product");
-    const detailsInput = document.getElementById("details");
-    const passwordInput = document.getElementById("order-password");
-    const confirmPasswordInput = document.getElementById("confirm-password");
-    const successMessage = document.getElementById("order-success");
+    if (orderForm) {
+        const nameInputOrder = document.getElementById("order-name");
+        const emailInputOrder = document.getElementById("order-email");
+        const productInput = document.getElementById("product");
+        const detailsInput = document.getElementById("details");
+        const passwordInput = document.getElementById("order-password");
+        const confirmPasswordInput = document.getElementById("confirm-password");
+        const successMessage = document.getElementById("order-success");
 
-    function showError(input, errorId, message) {
-        const errorElement = document.getElementById(errorId);
-        if (errorElement) {
-            errorElement.textContent = message;
-        }
-        input.classList.toggle("is-invalid", message !== "");
-        input.setAttribute("aria-invalid", message !== "" ? "true" : "false");
-    }
-
-    function validateName() {
-        const value = nameInputOrder.value.trim();
-        const valid = value.length >= 2;
-        showError(
-            nameInputOrder,
-            "name-error",
-            valid ? "" : "Please enter a real name (at least 2 characters)."
-        );
-        return valid;
-    }
-
-    function validateEmail() {
-        const email = emailInputOrder.value.trim();
-        // Fully JS validation (no HTML5 required / validity)
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const valid = email !== "" && emailRegex.test(email);
-        showError(
-            emailInputOrder,
-            "email-error",
-            valid ? "" : "Please enter a valid email address."
-        );
-        return valid;
-    }
-
-    function validateProduct() {
-        const valid = productInput.value !== "";
-        showError(
-            productInput,
-            "product-error",
-            valid ? "" : "Please select a product."
-        );
-        return valid;
-    }
-
-    function validateDetails() {
-        const value = detailsInput.value.trim();
-        const valid = value.length >= 5;
-        showError(
-            detailsInput,
-            "details-error",
-            valid ? "" : "Please enter more details (at least 5 characters)."
-        );
-        return valid;
-    }
-
-    function validatePassword() {
-        const value = passwordInput.value;
-        const hasDigit = /\d/.test(value);
-        const valid = value.length >= 8 && hasDigit;
-        showError(
-            passwordInput,
-            "password-error",
-            valid ? "" : "Password must be at least 8 characters and contain a number."
-        );
-        return valid;
-    }
-
-    function validateConfirmPassword() {
-        const valid =
-            confirmPasswordInput.value !== "" &&
-            confirmPasswordInput.value === passwordInput.value;
-        showError(
-            confirmPasswordInput,
-            "confirm-password-error",
-            valid ? "" : "Passwords do not match."
-        );
-        return valid;
-    }
-
-    // Live validation
-    nameInputOrder.addEventListener("input", validateName);
-    emailInputOrder.addEventListener("input", validateEmail);
-    productInput.addEventListener("change", validateProduct);
-    detailsInput.addEventListener("input", validateDetails);
-
-    passwordInput.addEventListener("input", function () {
-        validatePassword();
-        if (confirmPasswordInput.value !== "") {
-            validateConfirmPassword();
-        }
-    });
-
-    confirmPasswordInput.addEventListener("input", validateConfirmPassword);
-
-    // Submit
-    orderForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const isNameValid = validateName();
-        const isEmailValid = validateEmail();
-        const isProductValid = validateProduct();
-        const areDetailsValid = validateDetails();
-        const isPasswordValid = validatePassword();
-        const isConfirmationValid = validateConfirmPassword();
-
-        const isFormValid =
-            isNameValid &&
-            isEmailValid &&
-            isProductValid &&
-            areDetailsValid &&
-            isPasswordValid &&
-            isConfirmationValid;
-
-        if (!isFormValid) {
-            if (successMessage) successMessage.hidden = true;
-            playSound("error");
-
-            const firstInvalid = orderForm.querySelector(".is-invalid");
-            if (firstInvalid) firstInvalid.focus();
-            return;
+        function showError(input, errorId, message) {
+            const errorElement = document.getElementById(errorId);
+            if (errorElement) {
+                errorElement.textContent = message;
+            }
+            input.classList.toggle("is-invalid", message !== "");
+            input.setAttribute("aria-invalid", message !== "" ? "true" : "false");
         }
 
-        if (successMessage) {
-            successMessage.hidden = false;
+        function validateName() {
+            const value = nameInputOrder.value.trim();
+            const valid = value.length >= 2;
+            showError(
+                nameInputOrder,
+                "name-error",
+                valid ? "" : "Please enter a real name (at least 2 characters)."
+            );
+            return valid;
         }
-        playSound("success");
 
-        orderForm.reset();
+        function validateEmail() {
+            const email = emailInputOrder.value.trim();
+            const valid = email !== "" && emailInputOrder.validity.valid;
+            showError(
+                emailInputOrder,
+                "email-error",
+                valid ? "" : "Please enter a valid email address."
+            );
+            return valid;
+        }
 
-        orderForm.querySelectorAll(".is-invalid").forEach(function (input) {
-            input.classList.remove("is-invalid");
-            input.removeAttribute("aria-invalid");
+        function validateProduct() {
+            const valid = productInput.value !== "";
+            showError(
+                productInput,
+                "product-error",
+                valid ? "" : "Please select a product."
+            );
+            return valid;
+        }
+
+        function validateDetails() {
+            const value = detailsInput.value.trim();
+            const valid = value.length >= 5;
+            showError(
+                detailsInput,
+                "details-error",
+                valid ? "" : "Please enter more details (at least 5 characters)."
+            );
+            return valid;
+        }
+
+        function validatePassword() {
+            const value = passwordInput.value;
+            const hasDigit = /\d/.test(value);
+            const valid = value.length >= 8 && hasDigit;
+            showError(
+                passwordInput,
+                "password-error",
+                valid ? "" : "Password must be at least 8 characters and contain a number."
+            );
+            return valid;
+        }
+
+        function validateConfirmPassword() {
+            const valid =
+                confirmPasswordInput.value !== "" &&
+                confirmPasswordInput.value === passwordInput.value;
+            showError(
+                confirmPasswordInput,
+                "confirm-password-error",
+                valid ? "" : "Passwords do not match."
+            );
+            return valid;
+        }
+
+        nameInputOrder.addEventListener("input", validateName);
+        emailInputOrder.addEventListener("input", validateEmail);
+        productInput.addEventListener("change", validateProduct);
+        detailsInput.addEventListener("input", validateDetails);
+
+        passwordInput.addEventListener("input", function () {
+            validatePassword();
+            if (confirmPasswordInput.value !== "") {
+                validateConfirmPassword();
+            }
         });
 
-        orderForm.querySelectorAll(".validation-message").forEach(function (msg) {
-            msg.textContent = "";
+        confirmPasswordInput.addEventListener("input", validateConfirmPassword);
+
+        orderForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isProductValid = validateProduct();
+            const areDetailsValid = validateDetails();
+            const isPasswordValid = validatePassword();
+            const isConfirmationValid = validateConfirmPassword();
+
+            const isFormValid =
+                isNameValid &&
+                isEmailValid &&
+                isProductValid &&
+                areDetailsValid &&
+                isPasswordValid &&
+                isConfirmationValid;
+
+            if (!isFormValid) {
+                if (successMessage) successMessage.hidden = true;
+                playSound("error");
+
+                const firstInvalid = orderForm.querySelector(".is-invalid");
+                if (firstInvalid) firstInvalid.focus();
+                return;
+            }
+
+            if (successMessage) {
+                successMessage.hidden = false;
+            }
+            playSound("success");
+
+            orderForm.reset();
+
+            orderForm.querySelectorAll(".is-invalid").forEach(function (input) {
+                input.classList.remove("is-invalid");
+                input.removeAttribute("aria-invalid");
+            });
+
+            orderForm.querySelectorAll(".validation-message").forEach(function (msg) {
+                msg.textContent = "";
+            });
         });
-    });
-}
+    }
+
 
     // ==========================================
     // 14. READ MORE TOGGLE
