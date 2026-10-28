@@ -576,150 +576,153 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const orderForm = document.getElementById("order-form");
 
-    if (orderForm) {
-        const nameInputOrder = document.getElementById("order-name");
-        const emailInputOrder = document.getElementById("order-email");
-        const productInput = document.getElementById("product");
-        const detailsInput = document.getElementById("details");
-        const passwordInput = document.getElementById("order-password");
-        const confirmPasswordInput = document.getElementById("confirm-password");
-        const successMessage = document.getElementById("order-success");
+if (orderForm) {
+    const nameInputOrder = document.getElementById("order-name");
+    const emailInputOrder = document.getElementById("order-email");
+    const productInput = document.getElementById("product");
+    const detailsInput = document.getElementById("details");
+    const passwordInput = document.getElementById("order-password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+    const successMessage = document.getElementById("order-success");
 
-        function showError(input, errorId, message) {
-            const errorElement = document.getElementById(errorId);
-            if (errorElement) {
-                errorElement.textContent = message;
-            }
-            input.classList.toggle("is-invalid", message !== "");
-            input.setAttribute("aria-invalid", message !== "" ? "true" : "false");
+    function showError(input, errorId, message) {
+        const errorElement = document.getElementById(errorId);
+        if (errorElement) {
+            errorElement.textContent = message;
         }
-
-        function validateName() {
-            const value = nameInputOrder.value.trim();
-            const valid = value.length >= 2;
-            showError(
-                nameInputOrder,
-                "name-error",
-                valid ? "" : "Please enter a real name (at least 2 characters)."
-            );
-            return valid;
-        }
-
-        function validateEmail() {
-            const email = emailInputOrder.value.trim();
-            const valid = email !== "" && emailInputOrder.validity.valid;
-            showError(
-                emailInputOrder,
-                "email-error",
-                valid ? "" : "Please enter a valid email address."
-            );
-            return valid;
-        }
-
-        function validateProduct() {
-            const valid = productInput.value !== "";
-            showError(
-                productInput,
-                "product-error",
-                valid ? "" : "Please select a product."
-            );
-            return valid;
-        }
-
-        function validateDetails() {
-            const value = detailsInput.value.trim();
-            const valid = value.length >= 5;
-            showError(
-                detailsInput,
-                "details-error",
-                valid ? "" : "Please enter more details (at least 5 characters)."
-            );
-            return valid;
-        }
-
-        function validatePassword() {
-            const value = passwordInput.value;
-            const hasDigit = /\d/.test(value);
-            const valid = value.length >= 8 && hasDigit;
-            showError(
-                passwordInput,
-                "password-error",
-                valid ? "" : "Password must be at least 8 characters and contain a number."
-            );
-            return valid;
-        }
-
-        function validateConfirmPassword() {
-            const valid =
-                confirmPasswordInput.value !== "" &&
-                confirmPasswordInput.value === passwordInput.value;
-            showError(
-                confirmPasswordInput,
-                "confirm-password-error",
-                valid ? "" : "Passwords do not match."
-            );
-            return valid;
-        }
-
-        nameInputOrder.addEventListener("input", validateName);
-        emailInputOrder.addEventListener("input", validateEmail);
-        productInput.addEventListener("change", validateProduct);
-        detailsInput.addEventListener("input", validateDetails);
-
-        passwordInput.addEventListener("input", function () {
-            validatePassword();
-            if (confirmPasswordInput.value !== "") {
-                validateConfirmPassword();
-            }
-        });
-
-        confirmPasswordInput.addEventListener("input", validateConfirmPassword);
-
-        orderForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const isNameValid = validateName();
-            const isEmailValid = validateEmail();
-            const isProductValid = validateProduct();
-            const areDetailsValid = validateDetails();
-            const isPasswordValid = validatePassword();
-            const isConfirmationValid = validateConfirmPassword();
-
-            const isFormValid =
-                isNameValid &&
-                isEmailValid &&
-                isProductValid &&
-                areDetailsValid &&
-                isPasswordValid &&
-                isConfirmationValid;
-
-            if (!isFormValid) {
-                if (successMessage) successMessage.hidden = true;
-                playSound("error");
-
-                const firstInvalid = orderForm.querySelector(".is-invalid");
-                if (firstInvalid) firstInvalid.focus();
-                return;
-            }
-
-            if (successMessage) {
-                successMessage.hidden = false;
-            }
-            playSound("success");
-
-            orderForm.reset();
-
-            orderForm.querySelectorAll(".is-invalid").forEach(function (input) {
-                input.classList.remove("is-invalid");
-                input.removeAttribute("aria-invalid");
-            });
-
-            orderForm.querySelectorAll(".validation-message").forEach(function (msg) {
-                msg.textContent = "";
-            });
-        });
+        input.classList.toggle("is-invalid", message !== "");
+        input.setAttribute("aria-invalid", message !== "" ? "true" : "false");
     }
 
+    function validateName() {
+        const value = nameInputOrder.value.trim();
+        const valid = value.length >= 2;
+        showError(
+            nameInputOrder,
+            "name-error",
+            valid ? "" : "Please enter a real name (at least 2 characters)."
+        );
+        return valid;
+    }
+
+    function validateEmail() {
+        const email = emailInputOrder.value.trim();
+        // Fully JS validation (no HTML5 required / validity)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const valid = email !== "" && emailRegex.test(email);
+        showError(
+            emailInputOrder,
+            "email-error",
+            valid ? "" : "Please enter a valid email address."
+        );
+        return valid;
+    }
+
+    function validateProduct() {
+        const valid = productInput.value !== "";
+        showError(
+            productInput,
+            "product-error",
+            valid ? "" : "Please select a product."
+        );
+        return valid;
+    }
+
+    function validateDetails() {
+        const value = detailsInput.value.trim();
+        const valid = value.length >= 5;
+        showError(
+            detailsInput,
+            "details-error",
+            valid ? "" : "Please enter more details (at least 5 characters)."
+        );
+        return valid;
+    }
+
+    function validatePassword() {
+        const value = passwordInput.value;
+        const hasDigit = /\d/.test(value);
+        const valid = value.length >= 8 && hasDigit;
+        showError(
+            passwordInput,
+            "password-error",
+            valid ? "" : "Password must be at least 8 characters and contain a number."
+        );
+        return valid;
+    }
+
+    function validateConfirmPassword() {
+        const valid =
+            confirmPasswordInput.value !== "" &&
+            confirmPasswordInput.value === passwordInput.value;
+        showError(
+            confirmPasswordInput,
+            "confirm-password-error",
+            valid ? "" : "Passwords do not match."
+        );
+        return valid;
+    }
+
+    // Live validation
+    nameInputOrder.addEventListener("input", validateName);
+    emailInputOrder.addEventListener("input", validateEmail);
+    productInput.addEventListener("change", validateProduct);
+    detailsInput.addEventListener("input", validateDetails);
+
+    passwordInput.addEventListener("input", function () {
+        validatePassword();
+        if (confirmPasswordInput.value !== "") {
+            validateConfirmPassword();
+        }
+    });
+
+    confirmPasswordInput.addEventListener("input", validateConfirmPassword);
+
+    // Submit
+    orderForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isProductValid = validateProduct();
+        const areDetailsValid = validateDetails();
+        const isPasswordValid = validatePassword();
+        const isConfirmationValid = validateConfirmPassword();
+
+        const isFormValid =
+            isNameValid &&
+            isEmailValid &&
+            isProductValid &&
+            areDetailsValid &&
+            isPasswordValid &&
+            isConfirmationValid;
+
+        if (!isFormValid) {
+            if (successMessage) successMessage.hidden = true;
+            playSound("error");
+
+            const firstInvalid = orderForm.querySelector(".is-invalid");
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+
+        if (successMessage) {
+            successMessage.hidden = false;
+        }
+        playSound("success");
+
+        orderForm.reset();
+
+        orderForm.querySelectorAll(".is-invalid").forEach(function (input) {
+            input.classList.remove("is-invalid");
+            input.removeAttribute("aria-invalid");
+        });
+
+        orderForm.querySelectorAll(".validation-message").forEach(function (msg) {
+            msg.textContent = "";
+        });
+    });
+}
 
     // ==========================================
     // 14. READ MORE TOGGLE

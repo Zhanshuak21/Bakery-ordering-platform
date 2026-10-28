@@ -101,125 +101,85 @@
                         </p>
 
                         <!-- novalidate lets our JavaScript display custom errors -->
-                        <form id="order-form" class="p-4" novalidate>
+                        <!-- novalidate lets our JavaScript display custom errors -->
+<form id="order-form" class="p-4" novalidate>
 
-                            <!-- Name -->
-                            <div class="mb-3">
-                                <label for="order-name" class="form-label">Name</label>
-                                <input type="text"
-                                       id="order-name"
-                                       name="name"
-                                       class="form-control"
-                                       required>
-                                <div id="name-error"
-                                     class="validation-message"
-                                     aria-live="polite"></div>
-                            </div>
+    <!-- Name -->
+    <div class="mb-3">
+        <label for="order-name" class="form-label">Name</label>
+        <input type="text"
+               id="order-name"
+               name="name"
+               class="form-control">
+        <div id="name-error" class="validation-message" aria-live="polite"></div>
+    </div>
 
-                            <!-- Email -->
-                            <div class="mb-3">
-                                <label for="order-email" class="form-label">Email</label>
-                                <input type="email"
-                                       id="order-email"
-                                       name="email"
-                                       class="form-control"
-                                       required>
-                                <div id="email-error"
-                                     class="validation-message"
-                                     aria-live="polite"></div>
-                            </div>
+    <!-- Email -->
+    <div class="mb-3">
+        <label for="order-email" class="form-label">Email</label>
+        <input type="email"
+               id="order-email"
+               name="email"
+               class="form-control">
+        <div id="email-error" class="validation-message" aria-live="polite"></div>
+    </div>
 
-                            <!-- Product -->
-                            <div class="mb-3">
-                                <label for="product" class="form-label">Select Product</label>
-                                <select id="product"
-                                        name="product"
-                                        class="form-select"
-                                        required>
-                                    <option value="">Select a product</option>
-                                    <option value="cake">Custom Cake</option>
-                                    <option value="bread">Fresh Bread</option>
-                                    <option value="pastry">Pastry</option>
-                                </select>
-                                <div id="product-error"
-                                     class="validation-message"
-                                     aria-live="polite"></div>
-                            </div>
+    <!-- Product -->
+    <div class="mb-3">
+        <label for="product" class="form-label">Select Product</label>
+        <select id="product" name="product" class="form-select">
+            <option value="">Select a product</option>
+            <option value="cake">Custom Cake</option>
+            <option value="bread">Fresh Bread</option>
+            <option value="pastry">Pastry</option>
+        </select>
+        <div id="product-error" class="validation-message" aria-live="polite"></div>
+    </div>
 
-                            <!-- Decoration Color -->
-                            <div class="mb-3">
-                                <label for="color" class="form-label">
-                                    Preferred Decoration Color
-                                </label>
-                                <input type="color"
-                                       id="color"
-                                       name="color"
-                                       class="form-control form-control-color"
-                                       value="#9b5d3e">
-                            </div>
+    <!-- Decoration Color -->
+    <div class="mb-3">
+        <label for="color" class="form-label">Preferred Decoration Color</label>
+        <input type="color" id="color" name="color" class="form-control form-control-color" value="#9b5d3e">
+    </div>
 
-                            <!-- Order Details -->
-                            <div class="mb-3">
-                                <label for="details" class="form-label">Order Details</label>
-                                <textarea id="details"
-                                          name="details"
-                                          class="form-control"
-                                          rows="5"
-                                          required></textarea>
-                                <div id="details-error"
-                                     class="validation-message"
-                                     aria-live="polite"></div>
-                            </div>
+    <!-- Order Details -->
+    <div class="mb-3">
+        <label for="details" class="form-label">Order Details</label>
+        <textarea id="details" name="details" class="form-control" rows="5"></textarea>
+        <div id="details-error" class="validation-message" aria-live="polite"></div>
+    </div>
 
-                            <!-- NEW: Password -->
-                            <div class="mb-3">
-                                <label for="order-password" class="form-label">
-                                    Password
-                                </label>
-                                <input type="password"
-                                       id="order-password"
-                                       name="password"
-                                       class="form-control"
-                                       minlength="8"
-                                       autocomplete="new-password"
-                                       required>
-                                <div class="form-text">
-                                    Password must be at least 8 characters and contain a number.
-                                </div>
-                                <div id="password-error"
-                                     class="validation-message"
-                                     aria-live="polite"></div>
-                            </div>
+    <!-- Password -->
+    <div class="mb-3">
+        <label for="order-password" class="form-label">Password</label>
+        <input type="password"
+               id="order-password"
+               name="password"
+               class="form-control"
+               autocomplete="new-password">
+        <div class="form-text">
+            Password must be at least 8 characters and contain a number.
+        </div>
+        <div id="password-error" class="validation-message" aria-live="polite"></div>
+    </div>
 
-                            <!-- NEW: Confirm Password -->
-                            <div class="mb-3">
-                                <label for="confirm-password" class="form-label">
-                                    Confirm Password
-                                </label>
-                                <input type="password"
-                                       id="confirm-password"
-                                       name="confirmPassword"
-                                       class="form-control"
-                                       autocomplete="new-password"
-                                       required>
-                                <div id="confirm-password-error"
-                                     class="validation-message"
-                                     aria-live="polite"></div>
-                            </div>
+    <!-- Confirm Password -->
+    <div class="mb-3">
+        <label for="confirm-password" class="form-label">Confirm Password</label>
+        <input type="password"
+               id="confirm-password"
+               name="confirmPassword"
+               class="form-control"
+               autocomplete="new-password">
+        <div id="confirm-password-error" class="validation-message" aria-live="polite"></div>
+    </div>
 
-                            <!-- NEW: Form status -->
-                            <div id="order-success"
-                                 class="alert alert-success"
-                                 role="status"
-                                 hidden>
-                                All fields are valid! This is a demo only.
-                                Your order has not been sent.
-                            </div>
+    <div id="order-success" class="alert alert-success" role="status" hidden>
+        All fields are valid! This is a demo only. Your order has not been sent.
+    </div>
 
-                            <button type="submit" class="btn btn-primary btn-lg">
-                                Place Order
-                            </button>
-                        </form>
+    <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
+</form>
                     </div>
                 </div>
             </div>
